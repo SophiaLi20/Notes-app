@@ -1,0 +1,15 @@
+# Create Spring Boot project structure
+mkdir backend-springboot
+cd backend-springboot
+
+# Create the Java files as shown in the Spring Boot artifact
+# Ensure proper package structure:
+# src/main/java/com/example/notes/NotesApplication.java
+# src/main/java/com/example/notes/model/Note.java
+# src/main/java/com/example/notes/repository/NoteRepository.java
+# src/main/java/com/example/notes/controller/NoteController.java
+
+# Run the application
+./mvnw spring-boot:run
+# OR
+mvn spring-boot:run
