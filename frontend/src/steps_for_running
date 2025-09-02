@@ -1,18 +1,13 @@
-# this is the step for the bash for running the frontend plus fastAPI setup 
+# this is the step for the bash for running the frontend setup
+# Create React app
+npx create-react-app frontend
+cd frontend
 
-# Create backend directory
-mkdir backend-fastapi
-cd backend-fastapi
+# Install additional dependencies
+npm install lucide-react
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Replace src/App.js with the React component from artifact
+# Update API_BASE URL in the component to point to your FastAPI backend
 
-# Install dependencies
-pip install fastapi uvicorn
-
-# Create main.py (copy from artifact above)
-# Run the server
-python main.py
-# OR
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# Start development server
+npm start
