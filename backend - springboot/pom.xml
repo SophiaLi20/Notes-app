@@ -1,1 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maven Project Object Model (POM) file for Spring Boot Notes App -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Spring Boot Parent POM - provides dependency management and default configurations -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/> 
+    </parent>
+    
+    <!-- Project Information -->
+    <groupId>com.example</groupId>           <!-- Company/organization identifier -->
+    <artifactId>notes</artifactId>          <!-- Project identifier -->
+    <version>0.0.1-SNAPSHOT</version>       <!-- Project version -->
+    <name>notes</name>                      <!-- Human-readable project name -->
+    <description>Simple Notes CRUD API built with Spring Boot</description>
+    <packaging>jar</packaging>              <!-- Package as JAR file -->
+    
+    <!-- Java Version Configuration -->
+    <properties>
+        <java.version>17</java.version>     <!-- Minimum Java version required -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    
+    <!-- Project Dependencies -->
+    <dependencies>
+        
+        <!-- Spring Boot Web Starter - includes Spring MVC, Tomcat, and JSON processing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- Provides: REST controllers, HTTP handling, JSON serialization -->
+        </dependency>
+        
+        <!-- Spring Boot Data JPA Starter - includes Hibernate and database functionality -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <!-- Provides: JPA, Hibernate, Database connectivity, Repository pattern -->
+        </dependency>
+        
+        <!-- H2 Database - Lightweight in-memory database for development -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+            <!-- Only needed at runtime, includes web console for database management -->
+        </dependency>
+        
+        <!-- Spring Boot Validation Starter - for request validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <!-- Provides: Bean validation, input validation annotations -->
+        </dependency>
+        
+        <!-- Spring Boot Test Starter - for unit and integration testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <!-- Provides: JUnit, Mockito, Spring Test, TestContainers -->
+        </dependency>
+        
+        <!-- PostgreSQL Driver - uncomment for production database -->
+        <!--
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        -->
+        
+        <!-- Spring Boot Actuator - uncomment for health checks and monitoring -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        -->
+        
+    </dependencies>
 
+    <!-- Build Configuration -->
+    <build>
+        <plugins>
+            
+            <!-- Spring Boot Maven Plugin - enables running with 'mvn spring-boot:run' -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Enable hot reload during development -->
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            
+            <!-- Maven Compiler Plugin - ensures Java 17 compilation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+</project>
+
+<!-- 
+=============================================================================
+HOW TO USE THIS POM.XML:
+=============================================================================
+
+1. Create a new directory for your Spring Boot project
+2. Save this file as 'pom.xml' in the root directory
+3. Create the src/main/java directory structure
+4. Add the Java files (NotesApplication.java, Note.java, etc.)
+5. Run the following commands:
+
+   # Install dependencies and compile
+   mvn clean install
+   
+   # Run the application
+   mvn spring-boot:run
+   
+   # Or build and run JAR
+   mvn clean package
+   java -jar target/notes-0.0.1-SNAPSHOT.jar
+
+=============================================================================
+PRODUCTION MODIFICATIONS:
+=============================================================================
+
+For production deployment:
+1. Uncomment PostgreSQL dependency
+2. Update application.properties with production database settings
+3. Change version from SNAPSHOT to release version (e.g., 1.0.0)
+4. Add security dependencies if needed
+5. Configure proper logging levels
+
+-->
