@@ -10,6 +10,4 @@ cd backend-springboot
 # src/main/java/com/example/notes/controller/NoteController.java
 
 # Run the application
-./mvnw spring-boot:run
-# OR
 mvn spring-boot:run
