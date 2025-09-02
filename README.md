@@ -6,3 +6,16 @@
 ### View a list of all existing notes.
 ### Update the title or content of an existing note.
 ### Delete notes.
+
+
+## Tech Stack
+
+### Front-end
+React: A JavaScript library for building user interfaces.
+
+Axios: A promise-based HTTP client for making API requests.
+
+### Back-end
+Choose one of the following:
+FastAPI: A modern, fast web framework for building APIs with Python 
+Spring Boot: A framework for creating stand-alone, production-grade Spring-based applications in Java.
