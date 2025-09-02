@@ -1,4 +1,4 @@
-# this is the step for the bash for running the frontend 
+# this is the step for the bash for running the frontend plus fastAPI setup 
 
 # Create backend directory
 mkdir backend-fastapi
