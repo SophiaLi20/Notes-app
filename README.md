@@ -18,5 +18,5 @@ Axios: A promise-based HTTP client for making API requests.
 
 ### Back-end
 Choose one of the following:
-FastAPI: A modern, fast web framework for building APIs with Python 
+FastAPI: A modern, fast web framework for building APIs with Python.
 Spring Boot: A framework for creating stand-alone, production-grade Spring-based applications in Java.
