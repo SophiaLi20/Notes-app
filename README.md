@@ -6,8 +6,8 @@
 
  Create new notes with a title and content.
  View a list of all existing notes.
-### Update the title or content of an existing note.
-### Delete notes.
+ Update the title or content of an existing note.
+ Delete notes.
 
 
 ## Tech Stack
